@@ -1,10 +1,13 @@
-import './App.css';
+import "./App.css";
+import CardDeck from "./cards/deck";
+import React, { Component } from "react";
 
 function App() {
   return (
-    <div className="App">
-        <h1>karti</h1>
-    </div>
+    <React.Fragment>
+      <h1>karti</h1>
+      <CardDeck />
+    </React.Fragment>
   );
 }
 
