@@ -1,0 +1,58 @@
+.empty{
+    margin: 30px;
+    display: inline-block;
+    width: 117px;
+    height: 181px;
+    border: 1px rgb(50, 50, 50); 
+    border-style: ridge;
+    position: absolute;
+    z-index: 0;
+}
+.faceDown1 {
+    margin: 30px;
+    display: inline-block;
+    width: 117px;
+    height: 181px;
+    background-image: url(./images/cardBack.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 11px;
+    position: absolute;
+    z-index: 1;
+}
+.faceDown2 { /*za proba*/
+    margin: 30px;
+    display: inline-block;
+    width: 117px;
+    height: 181px;
+    background-image: url(./images/cardBack.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 11px;
+    position: relative;
+    z-index: 2;
+    translate: -5% 5%;
+}
+.faceUp1 {
+    margin: 30px;
+    display: inline-block;
+    width: 117px;
+    height: 181px;
+    background-image: url(./images/1-Clubs.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    z-index: 1;
+}
+.faceUp2 { /*za proba*/
+    margin: 30px;
+    display: inline-block;
+    width: 117px;
+    height: 181px;
+    background-image: url(./images/1-Diamonds.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    z-index: 2;
+    translate: 10% -5%;
+}
