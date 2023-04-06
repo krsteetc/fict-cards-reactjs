@@ -8,7 +8,7 @@
   position: absolute;
   z-index: 0;
 }
-.faceDown1 {
+.faceDown {
   margin: 30px;
   display: inline-block;
   width: 117px;
@@ -17,88 +17,24 @@
   background-repeat: no-repeat;
   background-size: 100% 100%;
   border-radius: 11px;
-  position: absolute;
+  position: relative;
   z-index: 1;
 }
-.faceDown2 {
-  /*za proba*/
+.faceUp {
   margin: 30px;
   display: inline-block;
   width: 117px;
   height: 181px;
-  background-image: url(./images/cardBack.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  border-radius: 11px;
   position: relative;
-  z-index: 2;
-  translate: -5% 5%;
-}
-.faceUp1 {
-  margin: 30px;
-  display: inline-block;
-  width: 117px;
-  height: 181px;
-  background-image: url(./images/1-Clubs.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
   z-index: 1;
 }
-.faceUp2 {
-  /*za proba*/
-  margin: 30px;
-  display: inline-block;
-  width: 117px;
-  height: 181px;
-  background-image: url(./images/1-Diamonds.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: relative;
-  z-index: 2;
-  translate: 10% -5%;
+.inLine {
+    float: left;
 }
-
-.faceDown3 {
-  /*za proba*/
-  margin: 10px;
-  display: inline-block;
+img {
   width: 117px;
   height: 181px;
-  background-image: url(./images/cardBack.png);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
   border-radius: 11px;
-  position: relative;
-  z-index: 2;
-  translate: -25% -17%;
-}
-
-.faceDown4 {
-  /*za proba*/
-  margin: 10px;
-  display: inline-block;
-  width: 117px;
-  height: 181px;
-  background-image: url(./images/cardBack.png);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  border-radius: 11px;
-  position: relative;
-  z-index: 2;
-  translate: -136% -14%;
-}
-
-.faceDown5 {
-  /*za proba*/
-  margin: 10px;
-  display: inline-block;
-  width: 117px;
-  height: 181px;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  border-radius: 11px;
-  position: relative;
-  z-index: 2;
-  translate: -100% -17%;
 }

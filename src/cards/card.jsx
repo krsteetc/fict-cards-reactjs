@@ -19,42 +19,69 @@ class Card extends Component {
       { rank: "Queen", value: 13 },
       { rank: "King", value: 14 },
     ],
-    card: [],
+    shuffledDeck: [],
+    card: null
   };
 
   cardDeck = () => {
-    const deck = ["Red Joker", "Black Joker"];
+    let deck = [];
 
-    for (let i = 0; i < this.state.suits.length; i++) {
-      for (let j = 0; j < this.state.ranks.length; j++) {
+    for (let i=0; i<this.state.suits.length; i++) {
+      for (let j=0; j<this.state.ranks.length; j++) {
         deck.push(
           <img
             src={require(`./images/${this.state.ranks[j].value}-${this.state.suits[i]}.png`)}
-            alt={
-              this.state.ranks[j].rank + " " + "of" + " " + this.state.suits[i]
-            }
+            alt={this.state.ranks[j].rank + " of " + this.state.suits[i]}
           />
         );
       }
     }
+    deck.push(
+      <img
+        src={require(`./images/jokerBlack.png`)}
+        alt={"Black Joker"}
+      />
+    );
+    deck.push(
+      <img
+        src={require(`./images/jokerRed.png`)}
+        alt={"Red Joker"}
+      />
+    );
     return deck;
   };
 
+  shuffleDeck = () => {
+    let randomCard;
+    let sD = this.cardDeck();
+    for(let i=0; i<sD.length; i++) {
+      randomCard = Math.floor(Math.random() * sD.length);
+      let temp=sD[i];
+      sD[i]=sD[randomCard];
+      sD[randomCard]=temp;
+    }
+    //return this.setState({ shuffledDeck: sD });
+    return sD;
+  };
+
   drawCard = () => {
-    const randomCard =
-      this.cardDeck()[Math.floor(Math.random() * this.cardDeck().length)];
-    return this.setState({ card: randomCard });
+    //let cD = this.state.shuffledDeck;
+    let cD = this.shuffleDeck();
+    let nextCard = cD[0];
+    return this.setState({ card: nextCard });
   };
 
   render() {
     return (
       <div>
-        <div className="empty"></div>
-        <div className="faceDown1"></div>
-        <div className="faceDown2"></div>
-        <div className="empty"></div>
-        <button className="faceDown4" onClick={() => this.drawCard()}></button>
-        <div className="faceDown5">{this.state.card}</div>
+        <div className="inLine">
+          <div className="empty"></div>
+          <div className="faceDown" onClick={() => this.drawCard()}></div>
+        </div>
+        <div className="inLine">
+          <div className="empty"></div>
+          <div className="faceUp">{this.state.card}</div>
+        </div>
       </div>
     );
   }
