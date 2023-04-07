@@ -20,7 +20,8 @@ class Card extends Component {
       { rank: "King", value: 14 },
     ],
     shuffledDeck: [],
-    card: null
+    card: null,
+    i:0
   };
 
   cardDeck = () => {
@@ -60,15 +61,22 @@ class Card extends Component {
       sD[i]=sD[randomCard];
       sD[randomCard]=temp;
     }
-    //return this.setState({ shuffledDeck: sD });
-    return sD;
+    this.setState({ shuffledDeck: sD });
   };
 
+  componentDidMount() {
+    window.addEventListener('load', this.shuffleDeck);
+  }
+
   drawCard = () => {
-    //let cD = this.state.shuffledDeck;
-    let cD = this.shuffleDeck();
-    let nextCard = cD[0];
+    let cD = this.state.shuffledDeck;
+    let nextCard = cD[this.state.i];
+    this.increment();
     return this.setState({ card: nextCard });
+  };
+
+  increment = () => {
+    this.state.i++;
   };
 
   render() {
@@ -76,11 +84,18 @@ class Card extends Component {
       <div>
         <div className="inLine">
           <div className="empty"></div>
-          <div className="faceDown" onClick={() => this.drawCard()}></div>
+          {this.state.i <53 ? (
+            <div className="faceDown0"></div>) :  
+            (<div className="empty"></div>)
+          }
+          {this.state.i <54 ? (
+            <div className="faceDown" onClick={() => this.drawCard()}></div>) : 
+            (<div className="empty"></div>)
+          }
         </div>
         <div className="inLine">
           <div className="empty"></div>
-          <div className="faceUp">{this.state.card}</div>
+          <div className="faceUp" >{this.state.card}</div>
         </div>
       </div>
     );

@@ -8,6 +8,18 @@
   position: absolute;
   z-index: 0;
 }
+.faceDown0 {
+  margin: 30px;
+  display: inline-block;
+  width: 117px;
+  height: 181px;
+  background-image: url(./images/cardBack.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-radius: 11px;
+  position: absolute;
+  z-index: 1;
+}
 .faceDown {
   margin: 30px;
   display: inline-block;
@@ -18,7 +30,8 @@
   background-size: 100% 100%;
   border-radius: 11px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  translate: -5% 5%;
 }
 .faceUp {
   margin: 30px;
